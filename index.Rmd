@@ -1,0 +1,25 @@
+---
+title: "Asylum Seeker Report"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+source("analysis.R")
+library("knitr")
+```
+
+This is a report about people seeking asylum in `r country_name`. There were `r num_people`
+that sought asylum from `r num_countries`.
+
+```{r echo=F}
+kable(top_10_countries, col.names = c("Country of Origin", "Number of Asylum Seekers"))
+```
+
+Below is a map of where people came from around the world.
+
+```{r echo=F}
+asylum_map
+```
+
